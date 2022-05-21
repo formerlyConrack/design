@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<title></title>
+	</head>
+	<body>
+		<div class="home">
+			<header>
+				<div id="slogan">
+					<div id="theme">
+						宝剑锋从磨砺出<br>
+						梅花香自苦寒来
+					</div>
+					<div id="text">
+						<p>周建民，男，现为中国兵器工业集团淮海工业集团有限公司十四分厂钳工。”</p>
+						<p>2017年5月23日，当选山西省出席党的十九大代表。</p>
+						<p>2021年6月28日，被中共中央授予“全国优秀共产党员”称号</p>
+					</div>
+				</div>
+				<div id="celebrity">
+					<img src="../image/周建民.png">
+				</div>
+			</header>
+			<div id="title">中国兵器淮海工业集团有限公司十四分厂 周建民</div>
+			<section id="describe">
+				<aside>
+					<p id="nav">人物经历</p>
+					<p id="nav">主要事迹</p>
+					<p id="changeStore">所获荣誉</p>
+				</aside>
+				<div id="content">
+					<div id="noneStore">
+						<p>原中国兵器工业集团山西北方惠丰机电有限公司工模具分公司高级工人技师、量具钳工。</p>
+						<p>现为中国兵器工业集团淮海工业集团有限公司十四分厂钳工。</p>
+					</div>
+					<div id="noneStore">
+						<p>“周大师，金牌工人，了不起！”记者到中国兵器工业集团淮海工业集团采访，一提起十四分厂高级工人技师、量具钳工周建民，工友们不约而同地竖起大拇指。</p>
+						<p>周建民参加工作30年，解决国家重点项目量具“卡脖子”难题50余项，创新成果达1000项，累计创造价值达3000多万元，创造了全省同行业多个“第一”。他主持的降低专用量规制造成本，提高专用量规耐用度获得国家专利，可将专用量规的耐用度提高30倍以上，每年为企业节约制造费用300多万元。
+						</p>
+						<p>周建民的父亲是个飞行机械师，受父亲影响，在飞机场长大的他，对机械深深地迷恋，当一名好工人，就是他的梦想。1982年，周建民从长治技工学校毕业后，进入企业成为一名学徒工，梦想就从这里起步。
+						</p>
+						<p>以虎钳为朋，以量规为友。每天清晨，第一个到工房的是周建民，下班后迟迟才肯离去的还是他。他凭着钉子似的钻劲，看书、看图纸、测算，在工具上反复打磨、制作，机声隆隆的大工房成了他奋斗的起点，成长的沃土。星期天，逛书店成了周建民的一大嗜好，一看到有关技术书籍，总是掏出工资“搜刮”回来。一天中午，妻子让他上街买菜，但左等右等不见回来。妻子着急，上街寻找，他正蹲在一个书摊前如饥似渴地看书呢，买菜之事早已忘到九霄云外。
+						</p>
+					</div>
+					<div id="store">
+						<p>周建民以他斐然的业绩而获得“全国劳动模范”、“全国五一劳动奖章”、“山西省劳动模范”、中国国防邮电工会“岗位创新能手”及省、市、集团公司的各类荣誉近百项。</p>
+						<p>2021年6月28日，被中共中央授予“全国优秀共产党员”称号。</p>
+						<p>2022年3月，被评选为2021年“大国工匠年度人物”。</p>
+					</div>
+				</div>
+			</section>
+			<section id="footer">
+				<img src="../image/江门市技师学院logo.png">
+				<img src="../image/logo-foot.png">
+			</section>
+		</div>
+		<script type="text/javascript">
+			var p = document.querySelector('aside').children
+			var store = document.querySelector('#content').children
+			var body = document.body
+			var startX = 0
+			var endX = 0
+			// 排他思想
+			for (let i = 0; i < p.length; i++) {
+				p[i].addEventListener('click', function() {
+					for (let i = 0; i < p.length; i++) {
+						p[i].id = 'nav'
+						store[i].id = 'noneStore'
+					}
+					this.id = 'changeStore'
+					store[i].id = 'store'
+				})
+			}
+			// 获取页面宽度 并减少50
+			var bodyWidth = body.offsetWidth - 50
+			// 定义节流阀
+			var flac = false
+			// 获取初始点击位置 如果比减少五十的页面宽度大则进入下一个页面 
+			body.addEventListener('touchstart', function(e) {
+				if (bodyWidth < e.touches[0].pageX) {
+					startX = e.touches[0].pageX
+					flac = true
+					// 如果大于零且小于等于五十则返回前一个页面
+				} else if (e.touches[0].pageX >= 0 && e.touches[0].pageX <= 50) {
+					startX = e.touches[0].pageX
+					flac = true
+				}
+			})
+			// 判断
+			body.addEventListener('touchmove', function(e) {
+				if (flac) {
+					endX = e.touches[0].pageX;
+					startX > endX ? location = 'numerical.html' : location = 'welder.html'
+					flac = false
+				}
+			})
+		</script>
+	</body>
+</html>

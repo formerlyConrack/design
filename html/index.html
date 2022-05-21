@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<title></title>
+	</head>
+
+	<body>
+		<div class="home">
+			<nav>
+				<div class="title">
+					<span class="text">World<br>Skills</span>
+					<div class="logo">
+						<img src="../image/logo.jpg">
+						选择成就精彩<br>网站设计与开发
+					</div>
+				</div>
+				<div class="catchphrase">
+					上海第46届世界技能大赛 WorldSkills Shanghai 2022
+				</div>
+			</nav>
+			<marquee behavior="" direction="" loop="1"></marquee>
+			<section class="theme">
+				<span>一技之长 能动天下</span><br>
+				<span>Master Skills Change the World</span>
+			</section>
+			<section class="content">
+				<img style="width: 80%;" src="../image/pic.jpg">
+				<div class="font">
+					<div>
+						宝剑锋从磨砺出，梅花香自苦寒来
+					</div>
+					<div>
+						水滴石穿，非一日之功
+					</div>
+					<div>
+						非淡泊无以明志，非宁静无以致远
+					</div>
+				</div>
+			</section>
+			<footer>
+				<div>
+					<img src="../image/logo-foot.png">
+				</div>
+			</footer>
+			<div class="direction">
+				<a class="retreat" href="index.html"></a>
+				<a class="advance" href="numerical.html"></a>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var body = document.body
+		// 获取页面宽度 并减少50
+		var bodyWidth = body.offsetWidth - 50
+		// 定义节流阀
+		var flac = false
+		// 获取初始点击位置 如果比减少五十的页面宽度大则进入下一个页面 
+		body.addEventListener('touchstart', function(e) {
+			if (bodyWidth < e.touches[0].pageX) {
+				startX = e.touches[0].pageX
+				flac = true
+				// 如果大于零且小于等于五十则返回前一个页面
+			} else if (e.touches[0].pageX >= 0 && e.touches[0].pageX <= 50) {
+				startX = e.touches[0].pageX
+				flac = true
+			}
+		})
+		// 判断
+		body.addEventListener('touchmove', function(e) {
+			if (flac) {
+				endX = e.touches[0].pageX;
+				startX > endX ? location = 'numerical.html' : alert('这已经是第一页了')
+				flac = false
+			}
+		})
+	</script>
+</html>

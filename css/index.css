@@ -1,0 +1,263 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+/* 小屏幕移动端 */
+@media (min-width: 0px) and (max-width:768px) {
+
+	/* 字体 */
+	@font-face {
+		font-family: "字酷堂郑板桥行书体";
+		src: url(../fonts/字酷堂郑板桥行书体.TTF);
+	}
+
+	@font-face {
+		font-family: "标准草书";
+		src: url(../fonts/C301-标准草书符号.ttf);
+	}
+
+	@font-face {
+		font-family: "霞鹭文楷";
+		src: url(../fonts/LXGWWenKai-Regular.ttf);
+	}
+
+	/* @font-face {
+		font-family: "硬笔行书";
+		src: url(../fonts/硬笔行书130106.ttf);
+	} */
+
+	/* index start */
+	.home {
+		margin: 2vw;
+		width: 96vw;
+		height: 100vh;
+		overflow: hidden;
+		border-left: 2px solid rgba(255, 255, 255, .3);
+		border-top: 2px solid rgba(255, 255, 255, .3);
+		box-shadow: 0px 0px 5px rgb(0, 0, 0);
+		text-align: center;
+	}
+
+	nav {
+		/* ≈24vh */
+		margin: 2vw;
+		width: 92vw;
+		height: 20vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.title {
+		display: flex;
+		justify-content: space-between;
+		font-family: "字酷堂郑板桥行书体";
+	}
+
+	.text {
+		width: 65%;
+		background-image: linear-gradient(to right, #e40404, #a40404);
+		-webkit-background-clip: text;
+		color: transparent;
+		font-size: 35px;
+		font-family: 'Source Sans Variable';
+		font-family: "标准草书";
+	}
+
+	.logo {
+		width: 35%;
+	}
+
+	.logo img {
+		width: 100%;
+	}
+
+	.catchphrase {
+		font-size: 14px;
+		margin: 2vh 0;
+		width: 100%;
+		background: #A40404;
+	}
+
+	.theme {
+		/* 14vh */
+		height: 5vh;
+		margin: 2vh;
+	}
+
+	.content {
+		height: 50vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.font a {
+		color: #A40404;
+		text-decoration: none;
+	}
+
+	footer {
+		background: #A40404;
+		height: 20vh;
+	}
+
+	/* index end */
+
+	/* chilren start */
+	header {
+		margin: 2vw;
+		width: 92vw;
+		height: 30vh;
+		display: flex;
+		background-size: 100% 100%;
+	}
+
+	#slogan {
+		width: 40%;
+		height: 30vh;
+		z-index: 999;
+	}
+
+	#slogan #theme {
+		background-image: linear-gradient(to right, #393e46, #222831);
+		-webkit-background-clip: text;
+		color: transparent;
+		height: 10vh;
+		font-size: 16px;
+		text-align: center;
+		font-family: "字酷堂郑板桥行书体";
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#slogan #text {
+		overflow: scroll;
+		text-indent: 2em;
+		height: 20vh;
+		font-size: 10px;
+		text-align: left;
+		font-family: "霞鹭文楷";
+	}
+
+	#celebrity {
+		width: 60%;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+	}
+
+	#celebrity img {
+		/* width: 100%; */
+	}
+
+	#title {
+		margin: 2vh 0;
+		background: #222831;
+		color: white;
+		font-family: "标准草书";
+	}
+
+	#describe {
+		display: flex;
+		height: 45vh;
+	}
+
+	aside {
+		width: 20%;
+		height: 100%;
+		overflow: hidden;
+		background-color: #eeeeee;
+		color: black;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+	}
+
+	aside #nav {
+		height: 17%;
+		transition: 1s;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 10px;
+		font-family: "霞鹭文楷";
+		z-index: 999;
+	}
+
+	#content {
+		width: 80%;
+		height: 100%;
+		background-color: rgba(0, 173, 181, .7);
+		overflow: scroll;
+		text-align: left;
+		z-index: 999;
+	}
+
+	#noneStore {
+		text-indent: 2em;
+		font-family: "霞鹭文楷";
+		display: none;
+		font-size: 8px;
+	}
+
+	#store {
+		height: 100%;
+		text-indent: 2em;
+		font-family: "霞鹭文楷";
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		font-size: 8px;
+	}
+
+	#store p {
+		margin-top: 1vh;
+	}
+
+	#changeStore {
+		height: 17%;
+		transition: 1s;
+		display: flex;
+		/* margin: 1vh 0; */
+		justify-content: center;
+		align-items: center;
+		font-size: 10px;
+		font-family: "霞鹭文楷";
+		background-color: #393e46;
+		color: #eeeeee;
+	}
+
+	#footer {
+		height: 15vh;
+		margin-top: 1vh;
+		background: #71c9ce;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+
+	#footer img:nth-child(1) {
+		width: 18%;
+	}
+
+	#footer img:nth-child(2) {
+		width: 58%;
+	}
+
+	/* chilren end*/
+}
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width: 768px) and (max-width:992px) {}
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media (min-width: 992px) {}
